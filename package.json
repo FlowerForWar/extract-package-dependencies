@@ -1,0 +1,23 @@
+{
+  "name": "extract-package-dependencies",
+  "version": "0.0.1",
+  "description": "Extract Node package dependencies as string to be installed later",
+  "author": "FlowerForWar",
+  "main": "src/package.json",
+  "scripts": {
+    "start": "gulp"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^6.1.1",
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "gulp": "^4.0.2",
+    "gulp-modifier": "^1.0.1",
+    "gulp-rename": "^2.0.0",
+    "prettier": "^2.7.1"
+  }
+}
