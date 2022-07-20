@@ -2,6 +2,7 @@
 
 Extract Node package dependencies as string, to be installed later.
 
+- Clone this repository
 - `npm install`
 - Input: `src/package.json`
 
