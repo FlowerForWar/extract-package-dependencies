@@ -1,6 +1,6 @@
 # extract-package-dependencies
 
-Extract Node package dependencies as string to be installed later
+Extract Node package dependencies as string, to be installed later.
 
 - `npm install`
 - Input: `src/package.json`
