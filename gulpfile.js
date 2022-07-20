@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 const { src, dest, series } = require('gulp');
 const modifyContent = require('gulp-modifier');
 const rename = require('gulp-rename');
@@ -15,17 +13,19 @@ function extractTask() {
     .pipe(
       modifyContent((content) => {
         const pkg = JSON.parse(content);
-        // console.log(pkg.name);
-        // console.log(pkgName);
+
+        /** Store the package name into `pkgName` variable, to use it later in `rename` */
         pkgName = pkg.name;
-        // console.log(pkgName);
+
         const dependencies = Object.keys(pkg.dependencies || []);
         const devDependencies = Object.keys(pkg.devDependencies || []);
-        return `
-npm install --save ${dependencies.join(' ')}
-
-npm install --save-dev ${devDependencies.join(' ')}
-`;
+        return [
+          '\n',
+          dependencies.length && `npm install --save ${dependencies.join(' ')}\n`,
+          devDependencies.length && `npm install --save-dev ${devDependencies.join(' ')}\n`,
+        ]
+          .filter(Boolean)
+          .join('');
       })
     )
 
